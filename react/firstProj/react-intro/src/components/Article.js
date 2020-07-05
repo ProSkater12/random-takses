@@ -35,7 +35,6 @@ class Article extends Component {
 
     /*Эксперементальный синтаксис*/
     handleClick = () => {
-        alert('Жопа');
         this.setState({
             isOpen: !this.state.isOpen
         })
