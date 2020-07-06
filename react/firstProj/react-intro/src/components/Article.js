@@ -2,19 +2,23 @@ import React, {Component} from 'react'
 
 class Article extends Component {
     /* Обычная запись*/
-    /*constructor(props){
+    constructor(props){
         super(props)
 
         this.state = {
-            isOpen: true
+            isOpen: props.defaultOpen
         }
 
-    }*/
+    }
 
     /*Эксперементальный синтаксис*/
-    state = {
+    /*state = {
         isOpen: true
-    }    
+    }    */
+
+    componentWillMount() {
+        console.log('---', 'mounting');
+    }
 
     render() {
         const {article} = this.props
