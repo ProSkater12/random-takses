@@ -1,0 +1,87 @@
+/*
+    В этом задании нельзя менять разметку в файле index.html, только стили в этом файле.
+ */
+
+.blocks > div {
+    border: 1px solid;
+    min-height: 30px;
+    margin: 10px;
+
+}
+
+/*
+    1. сделай так, чтобы блок block1 исчез со страницы
+ */
+
+ .block1 {
+   display: none;
+ }
+
+
+/*
+    2. Сделай так, чтобы block2 и block3 стояли рядом друг с другом, в линию, а не друг под другом.
+     Сделай, чтобы у этих блоков ширина была 120px
+ */
+
+ .block2 {
+   display: inline-block;
+   width: 120px;
+ }
+
+ .block3 {
+   display: inline-block;
+   width: 120px;
+ }
+/*
+    3. Сделай так, чтобы у block4 высота была равна 100px
+ */
+
+ .block4 {
+   height: 100px;
+ }
+
+/*
+    4. Сделай block5 шириной и высотой 150px, задай ему скругление углов равное 50%,
+     внутренний отступ сделай равным 55px сверху и 40px справа и слева, внешний отступ должен быть 50px по вертикали
+     и auto по горизонтали.
+     Сделай так, чтобы 150px были шириной всего полученного круга: от границы до границы, а не шириной контента
+
+     Подсказка: если не получается сделать так, чтобы блок оказался по центру, прочитай раздел
+     про специфичность селекторов. Например, тут: https://webref.ru/layout/learn-html-css/getting-to-know-css
+ */
+
+ .blocks .block5 {
+   width: 150px;
+   height: 150px;
+   border-radius: 50%;
+   padding-top: 55px;
+   padding-left: 40px;
+   padding-right: 40px;
+   margin: 50px auto;
+   box-sizing: border-box;
+ }
+
+/*
+    5. Сделай у block6 границу в точечку (dotted), толщиной 5px и цвета 'purple'
+ */
+
+ .blocks .block6 {
+   border: dotted 5px purple;
+ }
+
+/*
+    6. Сделай block7 треугольным. Для этого напиши ему следующие стили:
+     - ширину и высоту 0px
+     - границы шириной 40px, сплошной линией и цвета transparent (прозрачный)
+     - верхнюю границу нужно сделать шириной 40px, сплошной линией и цвета green
+     - цвет тексту сделай прозрачным (https://webref.ru/css/color)
+ */
+
+  .blocks .block7 {
+    width: 0px;
+    height: 0px;
+    border: solid 40px transparent;
+    border-top: solid 40px green;
+    color: transparent;
+  }
+

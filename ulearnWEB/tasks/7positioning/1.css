@@ -1,0 +1,171 @@
+/*
+    В этом задании нельзя менять разметку в файле index.html, только стили в этом файле.
+ */
+.wrapper {
+  margin: 30px 20px;
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px dashed #333;
+}
+
+.block {
+  margin: 10px 0;
+  padding: 10px;
+}
+
+/*
+    1. Шесть блоков внутри первого элемента wrapper должны быть выровнены по три в два ряда.
+        - Блокам нужно задать какой-нибудь фон, например, red.
+        - Высота у блоков должна быть 100px
+        - напиши такие стили, которые расположат блоки по три в ряд. Для этого задания воспользуйся свойством
+            display: inline-block;
+         Если нужно, меняй отступы margin и padding у самих блоков и их родителя wrapper1.
+       Сделай, чтобы блоки выравнивались по середине (отступы от краев родительского контейнера были одинаковыми).
+       Для этого их родителю, wrapper1 задай свойство text-align: center;
+       Подробнее об этом свойстве читать тут: https://webref.ru/css/text-align
+*/
+.wrapper1 {
+  text-align: center;
+}
+
+.wrapper1 .block {
+  background-color: red;
+  height: 100px;
+  display: inline-block;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+/*
+    2. Сделай так, чтобы блоки внутри второго wrapper наложились друг на друга, а высота родительского контейнера была
+     такой, будто блок в нем один.
+*/
+.wrapper2 {
+  height: 140px;
+}
+
+.wrapper2 .block {
+  height: 100px;
+  width: 100px;
+}
+
+.wrapper2 .block1 {
+  position: absolute;
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 35px,
+      rgba(149, 149, 149, 0.5) 35px,
+      rgba(149, 149, 149, 0.5) 70px);
+  background-color: #eee;
+}
+
+.wrapper2 .block2 {
+  position: absolute;
+  background-image: repeating-linear-gradient(135deg, transparent, transparent 35px,
+      rgba(149, 149, 149, 0.5) 35px,
+      rgba(149, 149, 149, 0.5) 70px);
+  background-color: rgba(238, 238, 238, 0.5);
+}
+
+/*
+    3. Сделай так, чтобы третий блок в третьем контейнере (wrapper3) был на 25px выше окружающих блоков
+    и на 25px правее исходного положения
+*/
+.wrapper3 .block3 {
+  position: relative;
+  bottom: 25px;
+  left: 25px;
+}
+
+.wrapper3 .block {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: #80b948;
+  margin: 10px;
+}
+
+/*
+    4. Четвертый контейнер содержит кнопку, нужно сделать, чтобы эта кнопка всегда была снизу справа на экране.
+    - сделай так, чтобы кнопка была на расстоянии 50px от нижнего края экрана и 28px от правого края экрана
+    и при любом скролле всегда оставалась на этом месте
+    - Сделай так, чтобы блок-родитель этой кнопки (wrapper4) не был виден на экране.
+*/
+.wrapper4 {
+  border: solid 0px black;
+  height: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.wrapper4 .button {
+  position: fixed;
+  bottom: 50px;
+  right: 28px;
+  border: 2px solid orange;
+  border-radius: 20px;
+  background-color: white;
+  font-size: 19px;
+  padding: 5px 15px;
+}
+
+/*
+    5. Для пятого контейнера (wrapper5) задача такая же, как и для первого, но решить ее нужно, используя flexbox.
+    Отцентрируй текст внутри блоков.
+*/
+
+.wrapper5 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrapper5 .block {
+  background-color: red;
+  height: 100px;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+/*
+    6. В шестом контейнере сделай так, чтобы блоки шли друг за другом в ряд
+     (при необходимости переносясь на следующую строчку).
+     Сделай так, чтобы третий блок был синего цвета (какой у тебя будет синий — выбирай сам) и шел последним в очереди.
+*/
+.wrapper6 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrapper6 .block {
+  width: 100px;
+  height: 100px;
+  background-color: #845dc4;
+}
+
+.wrapper6 .block3{
+  order: 6;
+  background-color: blue;
+}
+
+/*
+    7. В седьмом контейнере есть боковое меню и статья. Нужно, чтобы они, как это бывает на сайтах,
+    располагались друг рядом с другом.
+    1. Меню должно быть фиксированной ширины (200px), а статья — занимать все оставшееся место.
+    2. Серый фон меню должен знимать такую же высоту, как и статья.
+
+*/
+.wrapper7 {
+  display: flex;
+}
+
+.wrapper7 .menu {
+  display: inline-block;
+  width: 200px;
+  background-color: #eee;
+  line-height: 1.8;
+  margin-right: 30px;
+  flex: 0 0 200px;
+}
+
+.wrapper7 ul {
+  list-style: none;
+}
+

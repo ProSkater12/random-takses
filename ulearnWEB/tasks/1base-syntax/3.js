@@ -1,0 +1,3 @@
+function getNaN () {
+    return +'abc';
+}
