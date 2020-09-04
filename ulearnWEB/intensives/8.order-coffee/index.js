@@ -1,8 +1,16 @@
 let drinksNum = 1;
 let deleteBtns = [document.getElementById('deleteBtn1')];
 let addDrinkBtn = document.getElementById("add-drink");
+let drinks = [new Drink()];
 
 addDrinkBtn.addEventListener("click", addDrink, false);
+
+//Конструктор напитка
+function Drink(){
+    this.drink = 'Капучино';
+    this.milk = 'обычное';
+    this.options = [];
+}
 
 //Добавляем ещё одно окно выбора напитка
 function addDrink(){
@@ -65,6 +73,9 @@ function addDrink(){
 
             el.appendChild(form);
             renameDrinks();
+            drinks.push(new Drink);
+
+            console.log(drinks);
 }
 
 function deleteDrink(num) {
@@ -82,6 +93,7 @@ function renameDrinks(){
     let cases = document.getElementsByClassName('drinkNum');
     let beverages = document.getElementsByClassName('beverage');
     let deleteBtns = document.getElementsByClassName('deleteBtn');
+    let form = document.getElementById('form');
 
     console.log(cases.length);
 
@@ -89,9 +101,17 @@ function renameDrinks(){
         cases[i].innerHTML = 'Напиток №' + (i+1);
         beverages[i].id = 'case' + (i+1);
         //deleteBtns[i].onclick = deleteDrink(i + 1);
+
+        //переименуем настройки
+        for(let j = 2; j<6;j++){
+            form.elements[j+(i*10)].name = 'milk'+(i+1);
+            form.elements[(j+4)+(i*10)].name = 'options'+(i+1);
+        }
     }
 
     drinksNum = cases.length;
+
+    console.log(form.elements);
 }
 
 //Обработка формы
@@ -100,6 +120,10 @@ function submitBtn(){
     changeSubmitText(document.getElementById('modalText'));
     let modal = document.getElementsByClassName('modal-container');
     modal[0].style.display = 'block';
+
+    //напитки
+    let milk1 = findSelection('milk1');
+    console.log(milk1);
 }
 
 function changeSubmitText(el){
