@@ -122,8 +122,9 @@ function submitBtn(){
     modal[0].style.display = 'block';
 
     //напитки
-    let milk1 = findSelection('milk1');
-    console.log(milk1);
+    for(let i = 0; i < drinksNum; i++){
+        let radio = document.getElementsByName('milk1');
+    }
 }
 
 function changeSubmitText(el){
