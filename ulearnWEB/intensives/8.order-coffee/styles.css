@@ -4,6 +4,10 @@
     padding: 15px;
 }
 
+.beverage fieldset {
+  border: none;
+}
+
 .beverage-count {
     margin: 0 0 15px;
 }
@@ -55,12 +59,28 @@
 /* Модальное окно*/
 .modal-window {
     margin: auto;
-    width: 400px;
+    width: 600px;
     background-color: #eaeae6;
     padding: 30px 30px;
     margin-top: 200px
   }
   
+  .modal-window table {
+    width: 100%;
+    word-break: break-word;
+    table-layout: fixed;
+    text-align: center;
+  }
+
+  .modal-window span {
+    margin-top: 20px;
+    display: block;
+  }
+
+  .modal-window input[type="datetime-local"] {
+    margin-bottom: 20px;
+  }
+
   .modal-container {
     position: fixed;
     top: 0px;

@@ -6,13 +6,13 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<form onsubmit="submitBtn(); return false;"  id="form">
+<form onsubmit="submitBtn(); return false;" name="form" id="form">
     <div id='forms'>
-    <fieldset class="beverage" id="case1">
+    <div class="beverage" id="case1"><fieldset>
         <h4 class="beverage-count"><span class="drinkNum">Напиток №1 </span><img src="https://img.icons8.com/metro/26/000000/close-window.png" class="deleteBtn" onclick="deleteDrink(1);"/></h4>
         <label class="field">
             <span class="label-text">Я буду</span>
-            <select>
+            <select name="drinkName">
                 <option value="espresso">Эспрессо</option>
                 <option value="capuccino" selected>Капучино</option>
                 <option value="cacao">Какао</option>
@@ -37,7 +37,7 @@
                 <span>кокосовом молоке</span>
             </label>
         </div>
-        <div class="field">
+        <div class="field" name="optionsField">
             <span class="checkbox-label">Добавьте к напитку:</span>
             <label class="checkbox-field">
                 <input type="checkbox" name="options1" value="whipped cream" />
@@ -56,7 +56,12 @@
                 <span>корицу</span>
             </label>
         </div>
+        <div>
+            <input type="text" class="comment" placeholder="И еще вот что" id="comment1"></input>
+            <span class="commentText" id="commentText1"></span>
+        </div>
     </fieldset>
+    </div>
     </div>
     <div>
         <button type="button" class="add-button" id="add-drink">+ Добавить напиток</button>
@@ -68,9 +73,12 @@
 </form>
 
 <div class="modal-container" style="display:none;">
-    <div class="modal-window">
-      <div class="krest-modal" onclick="document.getElementsByClassName('modal-container')[0].style.display = 'none'">&#10006;</div>
+    <div class="modal-window" id="modal">
+      <div class="krest-modal" onclick="document.getElementsByClassName('modal-container')[0].style.display = 'none'; document.getElementById('drinksTbl').remove();">&#10006;</div>
       <h3 class="bigtitle-for-modal" id="modalText">Заказ принят!</h3>
+      <span id="orderTimeText">Выберите время заказа</span>
+      <input type="datetime-local" id="orderTime" required></input>
+      <button onclick="checkTime()">Оформить</button>
     </div>
   </div>
 
